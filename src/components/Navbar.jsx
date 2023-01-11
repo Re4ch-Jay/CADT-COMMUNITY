@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../contexts/AuthContext'
 
 const Navbar = () => {
+  const {logout} = useContext(AuthContext)
+
   return (
     <nav className="bg-blue-800 py-10 px-2 sm:px-4 py-2.5 border-b">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
       <a href="https://flowbite.com/" className="flex items-center">
           <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-9" alt="Flowbite Logo"/>
-          <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Flowbite</span>
+          <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Hello</span>
       </a>
       <div className="flex md:order-2">
           <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 text-gray-400 hover:bg-gray-700 focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
@@ -26,7 +29,7 @@ const Navbar = () => {
             <a href="#" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700">Services</a>
           </li>
           <li>
-            <a href="#" className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700">Contact</a>
+            <button onClick={logout} className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700">Logout</button>
           </li>
         </ul>
       </div>

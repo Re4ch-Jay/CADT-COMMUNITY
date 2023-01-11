@@ -1,10 +1,9 @@
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Chats from "./pages/Chats";
 import Login from "./pages/Login";
 function App() {
   return (
-    <BrowserRouter>
       <div className="App">
         <Routes>
           <Route path="/" element={<Login/>} />
@@ -12,7 +11,6 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </BrowserRouter>
   );
 }
 
